@@ -1,5 +1,5 @@
 # Tutorial Part 1
-====================================================================================================================================
+======
 
 You can use the [editor on GitHub](https://github.com/BlenderDataGeneration/BlenderDataGeneration.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -39,7 +39,7 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 
 # Tutorial Part 2
-====================================================================================================================================
+======
 
 You can use the [editor on GitHub](https://github.com/BlenderDataGeneration/BlenderDataGeneration.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -79,7 +79,7 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 
 # Tutorial Part 3
-====================================================================================================================================
+======
 
 You can use the [editor on GitHub](https://github.com/BlenderDataGeneration/BlenderDataGeneration.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
