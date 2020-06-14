@@ -50,8 +50,12 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ![](Images/Final_scene_Blender.png)
 
+A complete guide made by Blender Guru on how to set the rendering configurations in Blender can be found [here](https://www.youtube.com/watch?v=ZTxBrjN1ugA) as well as the guide on setting the materials of each object in the scene that can be found [here](https://www.youtube.com/watch?v=5lr8QnR5WWU&t=414s). Finally, the complete guide on how to assign textures to an object in blender can be found [here](https://www.youtube.com/watch?v=r5YNJghc81U)
+
 ## Camera setting
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+The complete guide to how to set the camera to orbit around a specific object can be found [here](https://www.youtube.com/watch?v=ghCsEVj2CFE)
 
 ![](Images/Add_axis_Blender.png)
 
