@@ -70,10 +70,99 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 # **Blender scritping**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-
+![](Images/Scrpting_console_Blender.png)
 
 ## Introduction to the blender console
+### Accesing scene information
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+```
+>>> bpy.data
+<bpy_struct, BlendData at 0x000001C251997458>
+
+>>> bpy.data.scenes
+<bpy_collection[1], BlendDataScenes>
+
+>>> bpy.data.scenes[0]
+bpy.data.scenes['Scene']
+
+>>> bpy.data.scenes[1]
+Traceback (most recent call last):
+  File "<blender_console>", line 1, in <module>
+IndexError: bpy_prop_collection[index]: index 1 out of range, size 1
+
+>>> scene = bpy.data.scenes[0]
+>>> scene
+bpy.data.scenes['Scene']
+
+```
+### Accesing object information
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+```
+>>> bpy.data.objects
+<bpy_collection[15], BlendDataObjects>
+
+>>> bpy.data.objects[0]
+bpy.data.objects['Camera']
+
+>>> camera = bpy.data.objects['Camera']
+>>> bpy.data.objects[1]
+bpy.data.objects['Carre bleu']
+
+>>> bpy.data.objects[2]
+bpy.data.objects['Conteneur coupe']
+
+>>> bpy.data.objects[3]
+bpy.data.objects['Empty']
+
+>>> axe = bpy.data.objects[3]
+>>> axe
+bpy.data.objects['Empty']
+
+>>> camera
+bpy.data.objects['Camera']
+
+>>> carre_bleu = bpy.data.objects['Carre bleu']
+>>> carre_bleu
+bpy.data.objects['Carre bleu']
+
+>>> bpy.data.objects['Light']
+bpy.data.objects['Light']
+
+>>> light1 = bpy.data.objects['Light']
+>>> light2 = bpy.data.objects['Light2']
+>>> light1
+bpy.data.objects['Light']
+
+>>> light2
+bpy.data.objects['Light2']
+
+```
+
+### Modifying object information
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+![](Images/Modfying_objects_Blender.png)
+
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+```
+>>> axe.rotation_euler = (0,0,0)
+>>> camera.location = (0,0,0.5)
+>>> light1.energy = 50
+>>> light1.data.energy = 50
+>>> light2.data.energy = 0
+
+```
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+![](Images/After_scripting_changes_Blender.png)
+
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+![](Images/Scriting_rotated_Blender.png)
+
 
 ## Main procedure to generate the training data
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
