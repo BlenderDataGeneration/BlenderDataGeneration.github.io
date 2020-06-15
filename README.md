@@ -4,10 +4,10 @@ You can use the [editor on GitHub](https://github.com/BlenderDataGeneration/Blen
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-- [# **Overview of the Project**)](#Overview of the Project)
+- [Heading](#Overview of the Project)
   * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
-- [# **Blender scene setup**](#Blender scene setup)
+- [Heading](#Blender scene setup)
   * [Sub-heading](#sub-heading-1)
     + [Sub-sub-heading](#sub-sub-heading-1)
 - [Heading](#heading-2)
