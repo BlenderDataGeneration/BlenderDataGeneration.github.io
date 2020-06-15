@@ -7,14 +7,19 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 - [Overview of the Project](#overview-of-the-project)
   * [Sub-heading](#sub-heading)
     + [Sub-sub-heading](#sub-sub-heading)
-- [Heading](#blender-scene-setup)
+- [Blender scene setup](#blender-scene-setup)
   * [Sub-heading](#sub-heading-1)
     + [Sub-sub-heading](#sub-sub-heading-1)
-- [Heading](#heading-2)
+- [Introduction to the blender console](#introduction-to-the-blender-console)
   * [Sub-heading](#sub-heading-2)
     + [Sub-sub-heading](#sub-sub-heading-2)
-
-
+- [Blender scritping](#blender-scripting)
+  * [Sub-heading](#sub-heading-2)
+    + [Sub-sub-heading](#sub-sub-heading-2)
+- [Test with YOLO and Google Colab](#test-with-yolo-and-google-colab)
+  * [Sub-heading](#sub-heading-2)
+    + [Sub-sub-heading](#sub-sub-heading-2)
+    
 <!-- toc -->
 
 
