@@ -153,7 +153,6 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 >>> light1.energy = 50
 >>> light1.data.energy = 50
 >>> light2.data.energy = 0
-
 ```
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
@@ -175,21 +174,81 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
+![](Images/Expected_results.png)
+
 ## Rendering class initial definition
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+```
+class Render:
+    def __init__(self):
+        ## Scene information
+        # Define the scene information
+        self.scene = bpy.data.scenes['Scene']
+        # Define the information relevant to the <bpy.data.objects>
+        self.camera = bpy.data.objects['Camera']
+        self.axis = bpy.data.objects['Empty']
+        self.light_1 = bpy.data.objects['Light']
+        self.light_2 = bpy.data.objects['Light2']
+        self.obj_names = ['Fleur rose', 'Carre bleu', 'Etoile verte', 'Hexagone jaune', 'Losange orange',
+                          'Ovale rose', 'Rectangle bleu', 'Rond vert', 'Triangle eq orange']
+        self.objects = self.create_objects() # Create list of bpy.data.objects from bpy.data.objects[1] to bpy.data.objects[N]
+
+        ## Render information
+        self.camera_z_limits = [0.3, 1] # Define range of heights z that the camera is going to pan through
+        self.beta_limits = [80, -80] # Define range of beta angles that the camera is going to pan through
+        self.gamma_limits = [0, 360] # Define range of gamma angles that the camera is going to pan through
+        
+        ## Output information
+        # Input your own preferred location for the images
+        self.images_filepath = 'C:/Users/Federico Arenas/Desktop/GitHubrepo/BlenderDataGeneration.github.io/Blender/Data'
+        # Input your own preferred location for the labels
+        self.labels_filepath = 'C:/Users/Federico Arenas/Desktop/GitHubrepo/BlenderDataGeneration.github.io/Blender/Data/Labels'
+
+    def create_objects(self): # This function creates a list of all the <bpy.data.objects> 
+        objs = []
+        for obj in self.obj_names:
+            objs.append(bpy.data.objects[obj])
+        
+        return objs
+```
 
 ## Main function
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
+```
+>>> axe.rotation_euler = (0,0,0)
+>>> camera.location = (0,0,0.5)
+>>> light1.energy = 50
+>>> light1.data.energy = 50
+>>> light2.data.energy = 0
+```
+
 ## _Get_text_coordinates_ function
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
+```
+>>> axe.rotation_euler = (0,0,0)
+>>> camera.location = (0,0,0.5)
+>>> light1.energy = 50
+>>> light1.data.energy = 50
+>>> light2.data.energy = 0
+```
 
 # **Test with YOLO and Google Colab**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
+```
+>>> axe.rotation_euler = (0,0,0)
+>>> camera.location = (0,0,0.5)
+>>> light1.energy = 50
+>>> light1.data.energy = 50
+>>> light2.data.energy = 0
+```
+
 ## YOLOv3 on Colab
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
 
 ## Results obtained
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
