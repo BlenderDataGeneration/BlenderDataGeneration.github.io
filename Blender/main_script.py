@@ -111,28 +111,47 @@ class Render:
             pass
 
     def get_all_coordinates(self, resx, resy):
-        main_text_coordinates = ''
-        for i, obj in enumerate(self.objects):
-            b_box = self.find_bounding_box(obj)
-            if b_box:
-                text_coordinates = self.format_coordinates(b_box, i, resx, resy)
-                main_text_coordinates = main_text_coordinates + text_coordinates
+        '''
+        This function takes the width and height of the image and outputs
+        the complete string with the coordinates of all the objects in view in 
+        the current image
+        '''
+        main_text_coordinates = '' # Initialize the variable where we'll store the coordinates
+        for i, obj in enumerate(self.objects): # Loop through all of the objects
+            b_box = self.find_bounding_box(obj) # Get current object's coordinates
+            if b_box: # If find_bounding_box() doesn't return None
+                text_coordinates = self.format_coordinates(b_box, i, resx, resy) # Reformat coordinates to YOLOv3 format
+                main_text_coordinates = main_text_coordinates + text_coordinates # Update main_text_coordinates variables which each
+                                                                                 # line corresponding to each class in the frame of the current image
 
-        return main_text_coordinates
+        return main_text_coordinates # Return all coordinates
 
-    def format_coordinates(self, coordinates, classe, resx, resy):
-        if coordinates:
+    def format_coordinates(self, coordinates, classe, img_width, img_height):
+        '''
+        This function takes as inputs the coordinates created by the find_bounding box() function, the current class,
+        the image width and the image height and outputs the coordinates of the bounding box of the current class
+        '''
+        # If the current class is in view of the camera
+        if coordinates: 
+            ## Change coordinates reference frame
             x1 = (coordinates[0][0])
             x2 = (coordinates[1][0])
             y1 = (1 - coordinates[1][1])
             y2 = (1 - coordinates[0][1])
 
-            # print('minX:', x1, 'minY:', y1, '\nmaxX:', x2, 'maxY:', y2)
-            txt_coordinates = self.obj_names[classe].replace(' ', '_') + ' ' + str(x1 * resx) + ' ' + str(
-                y1 * resy) + ' ' + str(x2 * resx) + ' ' + str(y2 * resy) + '\n'
+            ## Get final bounding box information
+            width = (x2-x1)  # Calculate the absolute width of the bounding box
+            height = (y2-y1) # Calculate the absolute height of the bounding box
+            # Calculate the absolute center of the bounding box
+            cx = x1 + (width/2) 
+            cy = y1 + (height/2)
+
+            ## Formulate line corresponding to the bounding box of one class
+            txt_coordinates = str(classe) + ' ' + str(cx) + ' ' + str(cy) + ' ' + str(width) + ' ' + str(height) + '\n'
 
             return txt_coordinates
 
+        # If the current class isn't in view of the camera, then pass
         else:
             pass
 
@@ -149,37 +168,30 @@ class Render:
         :param mesh_object:
         :return:
         """
-
         """ Get the inverse transformation matrix. """
         matrix = self.camera.matrix_world.normalized().inverted()
         """ Create a new mesh data block, using the inverse transform matrix to undo any transformations. """
         mesh = obj.to_mesh(preserve_all_data_layers=True)
         mesh.transform(obj.matrix_world)
         mesh.transform(matrix)
-
         """ Get the world coordinates for the camera frame bounding box, before any transformations. """
         frame = [-v for v in self.camera.data.view_frame(scene=self.scene)[:3]]
-
         lx = []
         ly = []
 
         for v in mesh.vertices:
             co_local = v.co
             z = -co_local.z
-
             if z <= 0.0:
                 """ Vertex is behind the camera; ignore it. """
                 continue
             else:
                 """ Perspective division """
                 frame = [(v / (v.z / z)) for v in frame]
-
             min_x, max_x = frame[1].x, frame[2].x
             min_y, max_y = frame[0].y, frame[1].y
-
             x = (co_local.x - min_x) / (max_x - min_x)
             y = (co_local.y - min_y) / (max_y - min_y)
-
             lx.append(x)
             ly.append(y)
 
@@ -212,19 +224,27 @@ class Render:
         return (min_x, min_y), (max_x, max_y)
 
     def render_blender(self, count_f_name):
+        '''
+        This function takes as input the render_counter and 
+        updates the photo information of the render
+        '''
         # Define random parameters
-        random.seed(random.randint(1,1000))
-        self.xpix = random.randint(500, 1500)
-        self.ypix = random.randint(500, 1500)
-        self.percentage = random.randint(50, 100)
-        samples = random.randint(25, 100)
+        random.seed(random.randint(1,1000)) # Update the random seed
+        self.xpix = random.randint(500, 1500) # Update x resolution as a number random number between 500 and 1500
+        self.ypix = random.randint(500, 1500) # Update y resolution as a number random number between 500 and 1500
+        self.percentage = random.randint(50, 100) # Update the resolution percentage of the image as a random percentage between 50% and 100%
+        samples = random.randint(25, 100) # Update the render samples between 25 and 100
 
         # Render images
-        image_name = str(count_f_name) + '.png'
+        image_name = str(count_f_name) + '.png' # Create file_name as 'render_counter.png'
         self.export_render(self.xpix, self.ypix, self.percentage, samples, self.images_filepath, image_name)
 
 
     def export_render(self, res_x, res_y, res_per, samples, file_path, file_name):
+        '''
+        This function takes the size x and y of the image, the resolution percentage, the samples of the render,
+        the image path and the the image name, and outputs image named as 'file_name'
+        '''
         bpy.context.scene.cycles.samples = samples
         self.scene.render.resolution_x = res_x
         self.scene.render.resolution_y = res_y
