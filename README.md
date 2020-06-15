@@ -73,7 +73,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 ![](Images/Scripting_console_Blender.png)
 
 ## Introduction to the blender console
-### Accesing scene information
+### >> Accesing scene information
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
@@ -96,7 +96,7 @@ IndexError: bpy_prop_collection[index]: index 1 out of range, size 1
 bpy.data.scenes['Scene']
 
 ```
-### Accesing object information
+### >> Accesing object information
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
@@ -140,7 +140,7 @@ bpy.data.objects['Light2']
 
 ```
 
-### Modifying object information
+### >> Modifying object information
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/Modifying_objects_Blender.png)
@@ -166,6 +166,16 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ## Main procedure to generate the training data
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+![](Images/Figure_environment_Blender.png)
+
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+![](Images/Figure_environment_Blender.png)
+
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+![](Images/Figure_environment_Blender.png)
 
 ## Rendering class initial definition
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
