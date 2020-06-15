@@ -5,10 +5,14 @@ You can use the [editor on GitHub](https://github.com/BlenderDataGeneration/Blen
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 - [Overview of the Project](#overview-of-the-project)
-  * [Sub-heading](#sub-heading)
-    + [Sub-sub-heading](#sub-sub-heading)
+  * [CAD Model import](#cad-model-import)
+  * [Scene definition](#scene-defintion)
+  * [Camera setting](#camera-setting)
+  * [CAD Model import](#cad-model-import)
 - [Blender scene setup](#blender-scene-setup)
-  * [Sub-heading](#sub-heading-1)
+  * [Introduction to the blender console](#introduction-to-the-blender-console)
+  * [Main procedure to generate the training data](#main-procedure-to-generate-the-training-data)
+  * [Rendering class initial definition](#rendering-class-initial-definition)
     + [Sub-sub-heading](#sub-sub-heading-1)
 - [Introduction to the blender console](#introduction-to-the-blender-console)
   * [Sub-heading](#sub-heading-2)
