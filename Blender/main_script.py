@@ -1,3 +1,4 @@
+## Import all relevant libraries
 import bpy
 import numpy as np
 import time
