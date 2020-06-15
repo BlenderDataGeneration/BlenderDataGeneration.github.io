@@ -217,11 +217,77 @@ class Render:
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
->>> axe.rotation_euler = (0,0,0)
->>> camera.location = (0,0,0.5)
->>> light1.energy = 50
->>> light1.data.energy = 50
->>> light2.data.energy = 0
+    def main_rendering_loop(self, rot_step):
+        '''
+        This function represent the main algorithm explained in the Tutorial, it accepts the
+        rotation step as input, and outputs the images and the labels to the above specified locations.
+        '''
+        ## Calculate the number of images and labels to generate
+        n_renders = self.calculate_n_renders(rot_step) # Calculate number of images
+        print('Number of renders to create:', n_renders)
+
+        accept_render = input('\nContinue?[Y/N]:  ') # Ask whether to procede with the data generation
+
+        if accept_render == 'Y': # If the user inputs 'Y' then procede with the data generation
+            # Create .txt file that record the progress of the data generation
+            report_file_path = self.labels_filepath + '/progress_report.txt' 
+            report = open(report_file_path, 'w')
+            # Multiply the limits by 10 to adapt to the for loop
+            zmin = int(self.camera_z_limits[0] * 10) 
+            zmax = int(self.camera_z_limits[1] * 10)
+            # Define a counter to name each .png and .txt files that are outputted
+            render_counter = -3
+            # Define the step with which the pictures are going to be taken
+            rotation_step = rot_step
+
+            # Begin nested loops
+            for d in range(zmin, zmax + 1, 2): # Loop to vary the height of the camera
+                render_counter += 1 # Update the counter 
+                ## Update the height of the camera 
+                self.camera.location = (0, 0, d/10) # Divide the distance z by 10 to re-factor current height
+
+                # Refactor the beta limits for them to be in a range from 0 to 360 to adapt the limits to the for loop
+                min_beta = (-1) * self.beta_limits[0] + 90 
+                max_beta = (-1) * self.beta_limits[1] + 90
+
+                for beta in range(min_beta, max_beta + 1, rotation_step): # Loop to vary the angle beta
+                    beta_r = 90 - beta # Re-factor the current beta
+                    render_counter += 1 # Update the counter
+
+                    for gamma in range(self.gamma_limits[0], self.gamma_limits[1] + 1, rotation_step): # Loop to vary the angle gamma
+                        render_counter += 1 # Update the counter
+                        
+                        ## Update the rotation of the axis
+                        axis_rotation = (m.radians(beta_r), 0, m.radians(gamma)) 
+                        self.axis.rotation_euler = axis_rotation # Assign rotation to <bpy.data.objects['Empty']> object
+
+                        ## Configure lighting
+                        energy1 = random.randint(0, 30) # Grab random light intensity
+                        self.light_1.data.energy = energy1 # Update the <bpy.data.objects['Light']> energy information
+                        energy2 = random.randint(4, 20) # Grab random light intensity
+                        self.light_2.data.energy = energy2 # Update the <bpy.data.objects['Light2']> energy information
+
+                        ## Generate render
+                        self.render_blender(render_counter) # Take photo of current scene and ouput the render_counter.png file
+
+                        ## Output Labels
+                        text_file_name = self.labels_filepath + '/' + str(render_counter) + '.txt' # Create label file name
+                        text_file = open(text_file_name, 'w+') # Open .txt file
+                        text_coordinates = self.get_all_coordinates(self.xpix * self.percentage * 0.01,
+                                                                    self.ypix * self.percentage * 0.01) # Get formatted coordinates of the bounding boxes of all the objects in the scene
+                        splitted_coordinates = text_coordinates.split('\n')[:-1] # Delete last '\n' in coordinates
+                        text_file.write('\n'.join(splitted_coordinates)) # Write the coordinates to the text file and output the render_counter.txt file
+                        text_file.close() # Close the .txt file corresponding to the label
+ 
+                        ## Show progress on batch of renders
+                        print('Progress =', str(render_counter) + '/' + str(n_renders))
+                        report.write('Progress: ' + str(render_counter) + ' Rotation: ' + str(axis_rotation) + ' z_d: ' + str(d / 10) + '\n')
+
+            report.close() # Close the .txt file corresponding to the report
+
+        else: # If the user inputs anything else, then abort the data generation
+            print('Aborted rendering operation')
+            pass
 ```
 
 ## _Get_text_coordinates_ function
