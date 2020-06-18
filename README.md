@@ -193,7 +193,11 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ![](Images/Algorithm.png)
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, 
+
+![](https://media.giphy.com/media/MCpYa58URbquQpmcQg/giphy.gif)
+
+voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/Expected_results.png)
 
@@ -329,6 +333,8 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 >>> light1.data.energy = 50
 >>> light2.data.energy = 0
 ```
+
+
 
 # **Test with YOLO and Google Colab**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
