@@ -42,40 +42,51 @@ In order to explain how to do this, in this section we'll walk the reader throug
 ## **Step 1: CAD Model import**
 The first step consists of importing (or creating) the objects we want to recognize into Blender. In our case, we decided to create the CAD model in Catia V5, and then import it as an .stl. It is also possible to create the model from scratch in Blender, however, as we were more fluent in Catia, we decided to do this on that software. 
 
-![Catia environment with the assembly of the objects we aim to recognize](Images/Catia_CAD_model.PNG)
+![](Images/Catia_CAD_model.PNG)
+_Catia environment with the assembly of the objects we aim to recognize_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+We then move on to opening Blender to start importing each .stl object we want to recognize. We click in the _File_ window, then _Import_, and finally we select the _Stl(.stl)_ option, in order to import the models previously exported from Catia V5.
 
 ![](Images/Import_STIL_blender.PNG)
+_Blender STL file import_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Before finishing the STL import, we have to specify that the scale would be _0.001_, since Blender works in _meters_ and Catia works in _milimiters_. This keeps the units of our model scaled to the Blender reference system, so in later stages the camera has a proportioned size compared to the imported model
 
 ![](Images/Scale_image_Blender.png)
+_Scaling the STL model before import in Blender_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Once each object is imported into the Blender Environment, make sure to create a plane to depict the surface of the scene. Also, make sure to name every object in the _Scene Collection_ menu that can be seen in the right panel in the following image. Make sure these names are easy to write, short and united by an underscore if the name contains two words.
 
 ![](Images/Blender_CAD_model_import.PNG)
+_Final scene with all objects imported and named_
 
-## **Scene definition**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+## **Step 2: Scene definition**
+Once the models are imported, we move onto defning the entiring scene in order to make it look the most realistic. The more realistic the scene is, the better our training data will be, and the better our algorithm will recognize the real-life objects we are training it to detect.
+
+Therefore, we start by defining the materials of each object by selecting it and going into the _Material_ option in the right panel shown below. The three parameters that are key to tuning the appearance of your object are the _Base Color_, _Specular_, and _Rougness_. The las two need to be adjusted to define whether the object absorbs or reflects light, if it is shiny or matte.
 
 ![](Images/Define_materials_Blender.png)
+_Blender object material definition Panel_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Additionnaly, and if necessary, textures can be added to the objects in the scene. These textures can be imported from an image and impose the _Base Color_ from the image. For our project, textures were added to the floor and the platform that holds the objects. A detailed guide on importing textures into Blender can be found [here](https://www.youtube.com/watch?v=r5YNJghc81U).
 
 ![](Images/Add_textures_Blender.png)
+_Assigning textures to a Blender object_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Next, the lights were defined, the second light can be created by copying and pasting the first light, that is created automatically when the Blender scene is started. As for with the objects, make sure to assign names to these lights such as _light1_ and _light2_ that will allow you to call them easily in the code, once we get to the scripting part. 
+
+These two lights' most important parameter is the _Power_ parameter, which will allow us to play with the intensity of the light once we get to the scripting part. In the following picture, on the right bottom part, we can see the "Light Properties" panel being open, with the _Power_ parameter on 16W.
 
 ![](Images/Light_setup_Blender.png)
+_Blender scene with its respective lights_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Once all the materials are defined, and the lights that fit your purposes are added, we can move on to visualizing the Rendering by clicking on the top right botton circled in green in the following picture. This allows us to access the _Viewport Shading_ in _Rendered_ mode.
 
 ![](Images/Final_scene_Blender.png)
 
-A complete guide made by Blender Guru on how to set the rendering configurations in Blender can be found [here](https://www.youtube.com/watch?v=ZTxBrjN1ugA) as well as the guide on setting the materials of each object in the scene that can be found [here](https://www.youtube.com/watch?v=5lr8QnR5WWU&t=414s). Finally, the complete guide on how to assign textures to an object in blender can be found [here](https://www.youtube.com/watch?v=r5YNJghc81U).
+Now the scene is setup! If any difficulties were found while going through this step, we encourage you to look at [a complete guide made by Blender Guru on how to set the rendering configurations in Blender](https://www.youtube.com/watch?v=ZTxBrjN1ugA) as well as [the guide on setting the materials of each object in the scene](https://www.youtube.com/watch?v=5lr8QnR5WWU&t=414s).
 
-## **Camera setting**
+## **Step 3: Camera setting**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 The complete guide to how to set the camera to orbit around a specific object can be found [here](https://www.youtube.com/watch?v=ghCsEVj2CFE).
@@ -95,7 +106,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ![](Images/Scripting_console_Blender.png)
 
-## **Introduction to the blender console**
+## **Introduction to the Blender Console**
 ### >> **Accesing scene information**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
