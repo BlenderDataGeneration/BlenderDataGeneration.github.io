@@ -110,9 +110,28 @@ _Demonstration of the camera orbiting the objects_
 Finally, he complete guide to how to set the camera to orbit around a specific object can be found [here](https://www.youtube.com/watch?v=ghCsEVj2CFE).
 
 # **3. Blender scritping**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Now that the complete scene is setup, we can start with the scripting. This Blender functionality will allow us to automate the render generation in order to make tens of thousands of pictures and labels that will serve as training data for our object recognition algorithm. This is extremely powerful because this means that if we have a realist-enough Blender scene, we can generate up to 20000 images and labels in around two days (this time will vary according to the capacities of the GPU of your own machine).
+
+This scripting functionality can be accessed by clicking in the _Scrpting_ window underlined in orange in the following picture. By clicking on this window, we-ll have three major elements come up: the _Blender Console_ shown in yellow, the _Scripting environment_ shown in orange, and the _Command tracker_ shown in green.
 
 ![](Images/Scripting_console_Blender.png)
+_Scripting window and its main components_
+
+The _Command Tracker_ allows you to track what actual scripting commands are being used when modifying a specific parameter in the Blender environment. For example, in the following picture I modifyied the position of the Axis.
+
+![](Images/Scripting_tracker_blender.png)
+_Tracking of the script used to change the position of the axis_
+
+The _Scripting environment_ allows you to import and save previously created Python Scripts. The script in the _Scripting environment_ will be saved to an external location of your choise. Additionnally, when the script is ready, you can run it by clicking on the _Run Script_ Button
+
+![](Images/Save_run_script_blender.png)
+_Saving, Opening and Running your script in Blender_
+
+Finally, once the script is ready to run, go to _Window/Toggle System Console_ to access the Console that shows the output of your code. This can be better represented in the following image.
+
+![](Images/Toggle_window_blender.png)
+_Toggle System Console Output_
+
 
 ## **Introduction to the Blender Console**
 ### >> **Accesing scene information**
