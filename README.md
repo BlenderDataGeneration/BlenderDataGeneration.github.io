@@ -6,7 +6,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 - [1. Overview of the Project](#1-overview-of-the-project)
 - [2. Blender scene setup](#2-blender-scene-setup)
-  * [2.1. CAD Model import](#2.1_-cad-model-import)
+  * [2.1. CAD Model import](#21_-cad-model-import)
   * [2.2. Scene definition](#2_2-scene-defintion)
   * [2.3. Camera setting](#2_3-camera-setting)
   * [2.4. CAD Model import](#2_4-cad-model-import)
