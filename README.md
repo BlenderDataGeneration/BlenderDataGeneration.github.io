@@ -17,10 +17,11 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
       + [3.1.3. Modifying object information](#modifying-object-information)
   * [3.2. Main algorithm to generate the training data](#main-procedure-to-generate-the-training-data)
   * [3.3. Rendering class initial definition](#rendering-class-initial-definition)
-  * [3.4. Main function](#rendering-class-initial-definition)
-      + [Get_text_coordinates function](#get_text_coordinates-function)
+  * [3.4. Main algorithm implementation](#rendering-class-initial-definition)
+  * [3.5. Main function to extract labels](#get_text_coordinates-function)
+  * [3.6. Results obtained from the data generation](#get_text_coordinates-function)
 - [5. Test with YOLO and Google Colab](#test-with-yolo-and-google-colab)
-  * [Results obtained](#results-obtained)
+  * [5.1. Results obtained](#results-obtained)
     
 <!-- toc -->
 
