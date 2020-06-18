@@ -97,67 +97,67 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 ### >> Accesing scene information
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-                        ```
-                        >>> bpy.data
-                        <bpy_struct, BlendData at 0x000001C251997458>
+```
+>>> bpy.data
+<bpy_struct, BlendData at 0x000001C251997458>
 
-                        >>> bpy.data.scenes
-                        <bpy_collection[1], BlendDataScenes>
+>>> bpy.data.scenes
+<bpy_collection[1], BlendDataScenes>
 
-                        >>> bpy.data.scenes[0]
-                        bpy.data.scenes['Scene']
+>>> bpy.data.scenes[0]
+bpy.data.scenes['Scene']
 
-                        >>> bpy.data.scenes[1]
-                        Traceback (most recent call last):
-                        File "<blender_console>", line 1, in <module>
-                        IndexError: bpy_prop_collection[index]: index 1 out of range, size 1
+>>> bpy.data.scenes[1]
+Traceback (most recent call last):
+  File "<blender_console>", line 1, in <module>
+IndexError: bpy_prop_collection[index]: index 1 out of range, size 1
 
-                        >>> scene = bpy.data.scenes[0]
-                        >>> scene
-                        bpy.data.scenes['Scene']
+>>> scene = bpy.data.scenes[0]
+>>> scene
+bpy.data.scenes['Scene']
 
-                        ```
+```
 ### >> Accesing object information
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-                        ```
-                        >>> bpy.data.objects
-                        <bpy_collection[15], BlendDataObjects>
+```
+>>> bpy.data.objects
+<bpy_collection[15], BlendDataObjects>
 
-                        >>> bpy.data.objects[0]
-                        bpy.data.objects['Camera']
+>>> bpy.data.objects[0]
+bpy.data.objects['Camera']
 
-                        >>> camera = bpy.data.objects['Camera']
-                        >>> bpy.data.objects[1]
-                        bpy.data.objects['Carre bleu']
+>>> camera = bpy.data.objects['Camera']
+>>> bpy.data.objects[1]
+bpy.data.objects['Carre bleu']
 
-                        >>> bpy.data.objects[2]
-                        bpy.data.objects['Conteneur coupe']
+>>> bpy.data.objects[2]
+bpy.data.objects['Conteneur coupe']
 
-                        >>> bpy.data.objects[3]
-                        bpy.data.objects['Empty']
+>>> bpy.data.objects[3]
+bpy.data.objects['Empty']
 
-                        >>> axe = bpy.data.objects[3]
-                        >>> axe
-                        bpy.data.objects['Empty']
+>>> axe = bpy.data.objects[3]
+>>> axe
+bpy.data.objects['Empty']
 
-                        >>> camera
-                        bpy.data.objects['Camera']
+>>> camera
+bpy.data.objects['Camera']
 
-                        >>> carre_bleu = bpy.data.objects['Carre bleu']
-                        >>> carre_bleu
-                        bpy.data.objects['Carre bleu']
+>>> carre_bleu = bpy.data.objects['Carre bleu']
+>>> carre_bleu
+bpy.data.objects['Carre bleu']
 
-                        >>> bpy.data.objects['Light']
-                        bpy.data.objects['Light']
+>>> bpy.data.objects['Light']
+bpy.data.objects['Light']
 
-                        >>> light1 = bpy.data.objects['Light']
-                        >>> light2 = bpy.data.objects['Light2']
-                        >>> light1
-                        bpy.data.objects['Light']
+>>> light1 = bpy.data.objects['Light']
+>>> light2 = bpy.data.objects['Light2']
+>>> light1
+bpy.data.objects['Light']
 
-                        >>> light2
-                        bpy.data.objects['Light2']
+>>> light2
+bpy.data.objects['Light2']
 
 ```
 
@@ -168,13 +168,13 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-                        ```
-                        >>> axe.rotation_euler = (0,0,0)
-                        >>> camera.location = (0,0,0.5)
-                        >>> light1.energy = 50
-                        >>> light1.data.energy = 50
-                        >>> light2.data.energy = 0
-                        ```
+```
+>>> axe.rotation_euler = (0,0,0)
+>>> camera.location = (0,0,0.5)
+>>> light1.energy = 50
+>>> light1.data.energy = 50
+>>> light2.data.energy = 0
+```
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/After_scripting_changes_Blender.PNG)
@@ -196,6 +196,10 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur
 
 ![](https://media.giphy.com/media/RJmzbdJQdTRAwyeY0N/giphy.gif)
+
+<p align="center">
+<img  src="https://media.giphy.com/media/RJmzbdJQdTRAwyeY0N/giphy.gif">
+</p>
 
 voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
@@ -349,34 +353,35 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 ## Results obtained from the data generation
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-                        ```
-                        1.png
-                        1.txt
-                        2.png
-                        2.txt
-                        3.png
-                        3.txt
-                        ...
-                        ...
-                        N.png
-                        N.txt
-                        ```
+    ```
+    1.png
+    1.txt
+    2.png
+    2.txt
+    3.png
+    3.txt
+    ...
+    ...
+    N.png
+    N.txt
+    ```
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-                        ```
-                        0 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
-                        1 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
-                        2 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
-                        ...
-                        ...
-                        N_classes <center_x> <center_y> <bounding_box_width> <bounding_box_height>
-                        ```
+    ```
+    0 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
+    1 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
+    2 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
+    ...
+    ...
+    N_classes <center_x> <center_y> <bounding_box_width> <bounding_box_height>
+    ```
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-![](https://media.giphy.com/media/KZSXBhe2UTrU7UpG2v/giphy.gif)
-
+<p align="center">
+<img  src="https://media.giphy.com/media/KZSXBhe2UTrU7UpG2v/giphy.gif">
+</p>
 
 # **Test with YOLO and Google Colab**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
