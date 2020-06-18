@@ -347,8 +347,37 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ## Results obtained from the data generation
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
+    ```
+    1.png
+    1.txt
+    2.png
+    2.txt
+    3.png
+    3.txt
+    ...
+    ...
+    N.png
+    N.txt
+    ```
 
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+    ```
+    0 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
+    1 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
+    2 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
+    ...
+    ...
+    N_classes <center_x> <center_y> <bounding_box_width> <bounding_box_height>
+    ```
+
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+<p align="center">
+<img src = 'https://media.giphy.com/media/KZSXBhe2UTrU7UpG2v/giphy.gif'>
+</p>
 
 
 # **Test with YOLO and Google Colab**
