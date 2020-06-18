@@ -382,19 +382,27 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 </p>
 
 # **Test with YOLO and Google Colab**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
-
-```
->>> axe.rotation_euler = (0,0,0)
->>> camera.location = (0,0,0.5)
->>> light1.energy = 50
->>> light1.data.energy = 50
->>> light2.data.energy = 0
-```
-
-## YOLOv3 on Colab
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+We decided to use the Darknet architecture using YOLOv3, and implemented in Google Colab. We downloaded the darknet architecture from [AlexeyAB's Darknet repository](https://github.com/AlexeyAB/darknet#yolo-v3-in-other-frameworks), and learned how to implement it [using this source](https://www.youtube.com/watch?v=10joRJt39Ns).
 
 
 ## Results obtained
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+<p align="center">
+<img  src="Images/Loss_charts.png">
+</p>
+
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+<p align="center">
+<img  src="Images/Accuracy_results.png">
+</p>
+
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+
+<p align="center">
+<img  src="https://media.giphy.com/media/QvjLvKObcUGxbIYxRe/giphy.gif">
+</p>
+
+
