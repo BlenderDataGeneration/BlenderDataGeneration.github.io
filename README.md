@@ -120,7 +120,7 @@ _Scripting window and its main components_
 The _Command Tracker_ allows you to track what actual scripting commands are being used when modifying a specific parameter in the Blender environment. For example, in the following picture I modifyied the position of the Axis.
 
 <p align="center">
-![](Images/Scripting_tracker_blender.png)
+<img  src="Images/Scripting_tracker_blender.png">
 </p>
 
 _Tracking of the script used to change the position of the axis_
