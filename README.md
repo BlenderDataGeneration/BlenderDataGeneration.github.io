@@ -246,7 +246,7 @@ class Render:
         return objs
 ```
 
-## Main function
+## Main algorithm to pan around the objects and take pictures
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
@@ -323,16 +323,31 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
             pass
 ```
 
-### >> _Get_text_coordinates_ function
+## Main function to extract labels from all objects in image
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
->>> axe.rotation_euler = (0,0,0)
->>> camera.location = (0,0,0.5)
->>> light1.energy = 50
->>> light1.data.energy = 50
->>> light2.data.energy = 0
+    def get_all_coordinates(self, resx, resy):
+        '''
+        This function takes the width and height of the image and outputs
+        the complete string with the coordinates of all the objects in view in 
+        the current image
+        '''
+        main_text_coordinates = '' # Initialize the variable where we'll store the coordinates
+        for i, obj in enumerate(self.objects): # Loop through all of the objects
+            b_box = self.find_bounding_box(obj) # Get current object's coordinates
+            if b_box: # If find_bounding_box() doesn't return None
+                text_coordinates = self.format_coordinates(b_box, i, resx, resy) # Reformat coordinates to YOLOv3 format
+                main_text_coordinates = main_text_coordinates + text_coordinates # Update main_text_coordinates variables which each
+                                                                                 # line corresponding to each class in the frame of the current image
+
+        return main_text_coordinates # Return all coordinates
 ```
+
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+## Results obtained from the data generation
+
 
 
 
