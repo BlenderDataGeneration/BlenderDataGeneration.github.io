@@ -35,12 +35,14 @@ Neque sitisquam volecae repelis doluptassin pore reium facearchita que vel eos n
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 # **2. Blender scene setup**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Whichever it is the object you want to recognize, in order to generate synthetic data to train its recognizor, we have to represent this or these objects in Blender. Therefore, we have to create and setup a scene that tries to resemble the most to the actual, real-life scene in which we would normally find the objects we want to recognize. 
 
-## **CAD Model import**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+In order to explain how to do this, in this section we'll walk the reader through the main steps that are necessary to setup a scene that's compatible with the scripting that will automate the data generation.
 
-![](Images/Catia_CAD_model.PNG)
+## **Step 1: CAD Model import**
+The first step consists of importing (or creating) the objects we want to recognize into Blender. In our case, we decided to create the CAD model in Catia V5, and then import it as an .stl. It is also possible to create the model from scratch in Blender, however, as we were more fluent in Catia, we decided to do this on that software. 
+
+![Catia environment with the assembly of the objects we aim to recognize](Images/Catia_CAD_model.PNG)
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
