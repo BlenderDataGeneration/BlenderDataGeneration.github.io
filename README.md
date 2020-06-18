@@ -120,7 +120,7 @@ bpy.data.scenes['Scene']
 ### >> **Accesing object information**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-```
+```python
 >>> bpy.data.objects
 <bpy_collection[15], BlendDataObjects>
 
@@ -168,7 +168,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-```
+```python
 >>> axe.rotation_euler = (0,0,0)
 >>> camera.location = (0,0,0.5)
 >>> light1.energy = 50
@@ -206,7 +206,7 @@ voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut a
 ## **Rendering class initial definition**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-```
+```python
 ## Import all relevant libraries
 import bpy
 import numpy as np
@@ -251,7 +251,7 @@ class Render:
 ## **Main algorithm to pan around the objects and take pictures**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-```
+```python
     def main_rendering_loop(self, rot_step):
         '''
         This function represent the main algorithm explained in the Tutorial, it accepts the
@@ -328,7 +328,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 ## **Main function to extract labels from all objects in image**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-```
+```python
     def get_all_coordinates(self, resx, resy):
         '''
         This function takes the width and height of the image and outputs
