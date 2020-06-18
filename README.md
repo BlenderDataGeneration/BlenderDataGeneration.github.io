@@ -5,23 +5,23 @@ You can use the [editor on GitHub](https://github.com/BlenderDataGeneration/Blen
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 - [1. Overview of the Project](#1-overview-of-the-project)
-- [2. Blender scene setup](#blender-scene-setup)
-  * [2.1. CAD Model import](#cad-model-import)
-  * [2.2. Scene definition](#scene-defintion)
-  * [2.3. Camera setting](#camera-setting)
-  * [2.4. CAD Model import](#cad-model-import)
-- [3. Blender scritping](#blender-scripting)
-  * [3.1 Introduction to the blender console](#introduction-to-the-blender-console)
-      + [3.1.1. Accessing scene information](#accessing-scene-information)
-      + [3.1.2. Accessing object information](#accessing-object-information)
-      + [3.1.3. Modifying object information](#modifying-object-information)
-  * [3.2. Main algorithm to generate the training data](#main-procedure-to-generate-the-training-data)
-  * [3.3. Rendering class initial definition](#rendering-class-initial-definition)
-  * [3.4. Main algorithm implementation](#rendering-class-initial-definition)
-  * [3.5. Main function to extract labels](#get_text_coordinates-function)
-  * [3.6. Results obtained from the data generation](#get_text_coordinates-function)
-- [5. Test with YOLO and Google Colab](#test-with-yolo-and-google-colab)
-  * [5.1. Results obtained](#results-obtained)
+- [2. Blender scene setup](#2-blender-scene-setup)
+  * [2.1. CAD Model import](#2_1-cad-model-import)
+  * [2.2. Scene definition](#2_2-scene-defintion)
+  * [2.3. Camera setting](#2_3-camera-setting)
+  * [2.4. CAD Model import](#2_4-cad-model-import)
+- [3. Blender scritping](#3-blender-scripting)
+  * [3.1 Introduction to the blender console](#3_1-introduction-to-the-blender-console)
+      + [3.1.1. Accessing scene information](#3_1_1-accessing-scene-information)
+      + [3.1.2. Accessing object information](#3_1_2-accessing-object-information)
+      + [3.1.3. Modifying object information](#3_1_2-modifying-object-information)
+  * [3.2. Main algorithm to generate the training data](#3_2-main-procedure-to-generate-the-training-data)
+  * [3.3. Rendering class initial definition](#3_3-rendering-class-initial-definition)
+  * [3.4. Main algorithm implementation](#3_4-rendering-class-initial-definition)
+  * [3.5. Main function to extract labels](#3_5-get_text_coordinates-function)
+  * [3.6. Results obtained from the data generation](#3_6-get_text_coordinates-function)
+- [4. Test with YOLO and Google Colab](#4-test-with-yolo-and-google-colab)
+  * [4.1. Results obtained](#4_1-results-obtained)
     
 <!-- toc -->
 
@@ -34,10 +34,10 @@ Neque sitisquam volecae repelis doluptassin pore reium facearchita que vel eos n
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-# **Blender scene setup**
+# **2. Blender scene setup**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-## CAD Model import
+## 2.1. CAD Model import
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/Catia_CAD_model.PNG)
@@ -54,7 +54,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ![](Images/Blender_CAD_model_import.PNG)
 
-## Scene definition
+## 2.2. Scene definition
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/Define_materials_Blender.png)
@@ -73,7 +73,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 A complete guide made by Blender Guru on how to set the rendering configurations in Blender can be found [here](https://www.youtube.com/watch?v=ZTxBrjN1ugA) as well as the guide on setting the materials of each object in the scene that can be found [here](https://www.youtube.com/watch?v=5lr8QnR5WWU&t=414s). Finally, the complete guide on how to assign textures to an object in blender can be found [here](https://www.youtube.com/watch?v=r5YNJghc81U).
 
-## Camera setting
+## 2.3. Camera setting
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 The complete guide to how to set the camera to orbit around a specific object can be found [here](https://www.youtube.com/watch?v=ghCsEVj2CFE).
@@ -88,13 +88,13 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ![](Images/Final_demo_parent_Blender.png)
 
-# **Blender scritping**
+# **3. Blender scritping**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/Scripting_console_Blender.png)
 
-## Introduction to the blender console
-### >> Accesing scene information
+## 3.1. Introduction to the blender console
+### >> 3.1.1. Accesing scene information
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
@@ -117,7 +117,7 @@ IndexError: bpy_prop_collection[index]: index 1 out of range, size 1
 bpy.data.scenes['Scene']
 
 ```
-### >> Accesing object information
+### >> 3.1.2. Accesing object information
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
@@ -161,7 +161,7 @@ bpy.data.objects['Light2']
 
 ```
 
-### >> Modifying object information
+### >> 3.1.3. Modifying object information
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/Modifying_objects_Blender.png)
@@ -184,7 +184,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 ![](Images/Scripting_rotated_Blender.png)
 
 
-## Main procedure to generate the training data
+## 3.2. Main procedure to generate the training data
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/Figure_environment_Blender.png)
@@ -203,7 +203,7 @@ voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut a
 
 ![](Images/Expected_results.png)
 
-## Rendering class initial definition
+## 3.3. Rendering class initial definition
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
@@ -248,7 +248,7 @@ class Render:
         return objs
 ```
 
-## Main algorithm to pan around the objects and take pictures
+## 3.4. Main algorithm to pan around the objects and take pictures
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
@@ -325,7 +325,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
             pass
 ```
 
-## Main function to extract labels from all objects in image
+## 3.5. Main function to extract labels from all objects in image
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ```
@@ -348,7 +348,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-## Results obtained from the data generation
+## 3.6. Results obtained from the data generation
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
     ```
@@ -381,11 +381,11 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 <img  src="https://media.giphy.com/media/KZSXBhe2UTrU7UpG2v/giphy.gif">
 </p>
 
-# **Test with YOLO and Google Colab**
+# **4. Test with YOLO and Google Colab**
 We decided to use the Darknet architecture using YOLOv3, and implemented in Google Colab. We downloaded the darknet architecture from [AlexeyAB's Darknet repository](https://github.com/AlexeyAB/darknet#yolo-v3-in-other-frameworks), and learned how to implement it [using this source](https://www.youtube.com/watch?v=10joRJt39Ns).
 
 
-## Results obtained
+## 4.1. Results obtained
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 <p align="center">
