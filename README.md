@@ -83,23 +83,31 @@ _Blender scene with its respective lights_
 Once all the materials are defined, and the lights that fit your purposes are added, we can move on to visualizing the Rendering by clicking on the top right botton circled in green in the following picture. This allows us to access the _Viewport Shading_ in _Rendered_ mode.
 
 ![](Images/Final_scene_Blender.png)
+_Rendered objects_
 
 Now the scene is setup! If any difficulties were found while going through this step, we encourage you to look at [a complete guide made by Blender Guru on how to set the rendering configurations in Blender](https://www.youtube.com/watch?v=ZTxBrjN1ugA) as well as [the guide on setting the materials of each object in the scene](https://www.youtube.com/watch?v=5lr8QnR5WWU&t=414s).
 
 ## **Step 3: Camera setting**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+The final step to setting up the Blender scene in order to start scripting is setting up the camera! This step is actually crucial because we need to be able to easily control the camera with the scripting in order to make it move around and take pictures. We decided to make the camera orbit all around the objects to take pictures from each angle.
 
-The complete guide to how to set the camera to orbit around a specific object can be found [here](https://www.youtube.com/watch?v=ghCsEVj2CFE).
+However, this movement isn't so evident if we think of the cubical space (x,y,z) the camera is set to move on. This means that it would be too complicated to set define a list of (x,y,z) points that describe a spherical movement around the objects. So, in order to simplify this task, we decided to create an axis fixed to the center of the scene, to which the camera would obey when it was moved. This means that when the axis is rotated in the center, the camera will rotate with it. Imagine putting your elbow in a table and moving your fist arond, the fist revolves around your elbow. Now imagine that the elbow is the axis and your fist is the camera, the camera revolves around the axis.
+
+Consequently, we create an axis and locate it in the center of the scene, as shown below. 
 
 ![](Images/Add_axis_Blender.png)
+_Adding an axis to the center of the scene in Blender_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Now, in order to subordinate the movement of the camera to the movement of the axis, we hold _Shift_ and select the _camera first_ and then the _axis_. Once both of them are selected, hwe hit _Ctr + P_ and select _Object (Keep Transform)_. This will make the axis a parent of the Camera.
 
 ![](Images/Parent_camera_to_axis_Blender.png)
+_Set the Axis as a Parent of the Camera_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+You can go ahead and test that this worked by going into _Camera view_, _selecting the axis_ and going into the _Transform window_ highlighted in green in the image below, and _changing the Rotation coordinates of the axis_. You'll see that the camera orbits the objects when the axis rotational coordinates are changed.
 
 ![](Images/Final_demo_parent_Blender.png)
+_Demonstration of the camera orbiting the objects_
+
+Finally, he complete guide to how to set the camera to orbit around a specific object can be found [here](https://www.youtube.com/watch?v=ghCsEVj2CFE).
 
 # **3. Blender scritping**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
