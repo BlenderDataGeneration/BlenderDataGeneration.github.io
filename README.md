@@ -10,11 +10,11 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
   * [Scene definition](#scene-defintion)
   * [Camera setting](#camera-setting)
   * [CAD Model import](#cad-model-import)
-- [3. Blender scritping](#blender-scripting)
+- [3. Blender scritping](#3-blender-scripting)
   * [Introduction to the blender console](#introduction-to-the-blender-console)
-      + [Accessing scene information](#accessing-scene-information)
-      + [Accessing object information](#accessing-object-information)
-      + [Modifying object information](#modifying-object-information)
+      + [Accessing scene information](#>>-accessing-scene-information)
+      + [Accessing object information](#>>-accessing-object-information)
+      + [Modifying object information](#>>-modifying-object-information)
   * [Main algorithm to generate the training data](#main-procedure-to-generate-the-training-data)
   * [Rendering class initial definition](#rendering-class-initial-definition)
   * [Main algorithm implementation](#rendering-class-initial-definition)
@@ -93,7 +93,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ![](Images/Scripting_console_Blender.png)
 
-## ** Introduction to the blender console**
+## **Introduction to the blender console**
 ### >> **Accesing scene information**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
