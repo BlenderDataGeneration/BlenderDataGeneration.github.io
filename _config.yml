@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
 title: Synthetic data generation for YOLO with Blender and Python
 description: An extensive guide to generating training, labelled data for a real-life YOLO application
-baseurl:   ""
+baseurl:   "https://github.com/BlenderDataGeneration/BlenderDataGeneration.github.io/tree/master/Blender"
       
