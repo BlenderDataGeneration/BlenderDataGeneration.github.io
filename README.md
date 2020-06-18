@@ -97,7 +97,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 ### >> **Accesing scene information**
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
-```
+```python
 >>> bpy.data
 <bpy_struct, BlendData at 0x000001C251997458>
 
