@@ -4,7 +4,7 @@ You can use the [editor on GitHub](https://github.com/BlenderDataGeneration/Blen
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-- [1. Overview of the Project](#overview-of-the-project)
+- [1. Overview of the Project](#1.-overview-of-the-project)
 - [2. Blender scene setup](#blender-scene-setup)
   * [2.1. CAD Model import](#cad-model-import)
   * [2.2. Scene definition](#scene-defintion)
@@ -26,7 +26,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 <!-- toc -->
 
 
-# **Overview of the Project**
+# **1. Overview of the Project**
 Neque sitisquam volecae repelis doluptassin pore reium facearchita que vel eos nimpore et, quiatiis molut aut et quident pelibus am ditis nonsectati inctotatem reruptatet volo tem. Lique essi tem. Neque necto eos dolorectem simus ut volores ciatiosti net faccatemquo ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/Realexample1.jpeg)  ![](Images/Realexample2.jpeg)  ![](Images/Realexample3.jpg)
