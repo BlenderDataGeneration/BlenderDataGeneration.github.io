@@ -195,7 +195,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, 
 
-                            ![](https://media.giphy.com/media/RJmzbdJQdTRAwyeY0N/giphy.gif)
+<center>![](https://media.giphy.com/media/RJmzbdJQdTRAwyeY0N/giphy.gif)</center>
 
 voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
