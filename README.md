@@ -17,9 +17,9 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
       + [Modifying object information](#>>-modifying-object-information)
   * [Main algorithm to generate the training data](#main-procedure-to-generate-the-training-data)
   * [Rendering class initial definition](#rendering-class-initial-definition)
-  * [Main algorithm implementation](#rendering-class-initial-definition)
-  * [Main function to extract labels](#get_text_coordinates-function)
-  * [Results obtained from the data generation](#get_text_coordinates-function)
+  * [Main algorithm implementation](#main-algorithm-to-pan-around-the-objects-and-take-pictures)
+  * [Main function to extract labels](#Main-function-to-extract-labels-from-all-objects-in-image)
+  * [Results obtained from the data generation](#Results-obtained-from-the-data-generation)
 - [4. Test with YOLO and Google Colab](#4-test-with-yolo-and-google-colab)
   * [Results obtained](#results-obtained)
     
