@@ -283,7 +283,7 @@ class Render:
         return render_counter
 
 
-
-r = Render()
-r.set_camera()
-r.main_rendering_loop(5)
+if __name__ == '__main__':
+    r = Render() # Initialize Render() class and define it as r
+    r.set_camera() # Initialize all positions of the camera and the axis
+    r.main_rendering_loop(5) # Start rendering with specified rotation step (rot_step)
