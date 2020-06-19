@@ -215,7 +215,6 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 ```python
 >>> axe.rotation_euler = (0,0,0)
 >>> camera.location = (0,0,0.5)
->>> light1.energy = 50
 >>> light1.data.energy = 50
 >>> light2.data.energy = 0
 ```
