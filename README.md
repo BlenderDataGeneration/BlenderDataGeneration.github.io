@@ -138,7 +138,11 @@ _Toggle System Console Output_
 
 ## **Introduction to the Blender Console**
 ### >> **Accesing scene information**
+<<<<<<< HEAD
 **Text after console FEDERICO**
+=======
+
+>>>>>>> 90899b66dfd47e7570b4b0ef404855b2b217f29d
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
