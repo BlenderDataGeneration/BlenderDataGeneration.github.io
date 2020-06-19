@@ -454,7 +454,7 @@ The function can be seen here:
 Finally, the _main_text_coordinates_ are returned as a string.
 
 ## **Results obtained from the data generation**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+We run the following code, which calls the _Render()_ class, initializes de camera end then starts the data generation loop. 
 
 ```python
 
@@ -464,28 +464,12 @@ if __name__ == '__main__':
     r.main_rendering_loop(5) # Start rendering with specified rotation step (rot_step)
 
 ```
-dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+The program will output the progress to the Blender _Toggle Console Window_. It will output the images and labels to the specified locations.
 
-![](Images/Expected_results.png)
+![](Images/toggle_results_labels.PNG)
 _Messages in the Toggle Console Window_
 
-dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
-
-
-    ```
-    1.png
-    1.txt
-    2.png
-    2.txt
-    3.png
-    3.txt
-    ...
-    ...
-    N.png
-    N.txt
-    ```
-
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+The labels, as mentioned before, will have the following format.
 
     ```
     0 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
@@ -496,7 +480,7 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
     N_classes <center_x> <center_y> <bounding_box_width> <bounding_box_height>
     ```
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Finally, we run a program that draws the outputted labels to the outputted images in order to verify that these labels are correctly pointing to each of the objects.
 
 <p align="center">
 <img  src="https://media.giphy.com/media/KZSXBhe2UTrU7UpG2v/giphy.gif">
@@ -505,24 +489,27 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 # **4. Test with YOLO and Google Colab**
 We decided to use the Darknet architecture using YOLOv3, and implemented in Google Colab. We downloaded the darknet architecture from [AlexeyAB's Darknet repository](https://github.com/AlexeyAB/darknet#yolo-v3-in-other-frameworks), and learned how to implement it [using this source](https://www.youtube.com/watch?v=10joRJt39Ns).
 
+This blogpost focuses on the procedure to automate training data generation for a YOLO application, and not on the training itself, so this section's purpose is to show a short summary of our results, and is not meant to be explanatory.
 
 ## **Results obtained**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+We made 5 different tests in order to obtain the best performance. However, we were highly limited by the processing capacities of our own computer, with a GPU Nvidia GeForce MX150, the rendering of around 10000 images would take up to a day and a half. This means that the creation of datasets of around 100000 images would not be feasible, since we would need to use our computer for other purposes too.
+
+In any case, the training outputted the following loss charts.
 
 <p align="center">
 <img  src="Images/Loss_charts.png">
 </p>
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+We made a summary of the results and found that increasing the quantity of data isn't always helpful if you are not representing the variations that the test will contain. This can be seen in the comparison between _Test 1_ and _Test 5_. 
 
 <p align="center">
 <img  src="Images/Accuracy_results.png">
 </p>
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+The recognition results are satisfactory taking into account that it took us around a week to obtain the data and train our models, with low-capacity computers. This means that the scalability of synthetic data generation is very good. With better resources, we can train our algorithms with a lot more data, and even more photo-realistic.
 
 <p align="center">
 <img  src="https://media.giphy.com/media/QvjLvKObcUGxbIYxRe/giphy.gif">
 </p>
 
-A demonstration of the algorithm working on video can be found [here](https://www.youtube.com/watch?v=z1bx544dLs8)
+A demonstration of the algorithm working on video can be found [here](https://www.youtube.com/watch?v=z1bx544dLs8).
