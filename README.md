@@ -397,18 +397,24 @@ This second function will be further explained in the following section. Once th
 ## **Main function to extract labels from all objects in image**
 The fonction _get_all_coordinates(resx, resy)_ loops through all the objects in _self.objects_ and tries to get each object's coordinates with the function _self.find_bounding_box(obj)_ which takes the current object _obj_ and if in view of the camera, outputs its coordinates. This function is further explained [here](https://olestourko.github.io/2018/02/03/generating-convnet-training-data-with-blender-1.html), and is integrated into the full code we made [here](). 
 
-Next, if the object is found, the function _self.format_coordinates(b_box, i, resx, resy)_ reformats the coordinates from this format
+Next, if the object is found, the function _self.format_coordinates(b_box, i, resx, resy)_ reformats the labels of each object from this format:
 
     ```
-    Name_of_class_0 <min_x> <min_y> <max_x> <max_y>
-    Name_of_class_1 <min_x> <min_y> <max_x> <max_y>
-    Name_of_class_2 <min_x> <min_y> <max_x> <max_y>
+    Name_of_class_0 <top_x> <top_y> <bottom_x> <bottom_y>
+    Name_of_class_1 <top_x> <top_y> <bottom_x> <bottom_y>
+    Name_of_class_2 <top_x> <top_y> <bottom_x> <bottom_y>
     ...
     ...
-    Name_of_class_N <min_x> <min_y> <max_x> <max_y>
+    Name_of_class_N <top_x> <top_y> <bottom_x> <bottom_y>
     ```
 
-to this format
+<p align="center">
+<img  src="Images/Label_object.png">
+</p>
+
+_Initial format of the label ([source](https://github.com/theAIGuysCode/OIDv4_ToolKit))_
+
+to the format used by YOLO:
 
     ```
     0 <center_x> <center_y> <bounding_box_width> <bounding_box_height>
@@ -418,6 +424,12 @@ to this format
     ...
     N_classes <center_x> <center_y> <bounding_box_width> <bounding_box_height>
     ```
+
+<p align="center">
+<img  src="Images/box_label_yolo.png">
+</p>
+
+_Format of the label after formatting ([source](https://datascience-enthusiast.com/DL/Autonomous_driving_Car_detection.html))_
 
 The function can be seen here:
 
