@@ -222,7 +222,13 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 
 ![](Images/After_scripting_changes_Blender.PNG)
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, 
+
+```
+>>> axe.rotation_euler = (0,0,50)
+```
+
+voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
 
 ![](Images/Scripting_rotated_Blender.png)
 
