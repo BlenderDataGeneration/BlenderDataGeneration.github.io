@@ -1,8 +1,12 @@
-Generate synthetic data with Blender and Python
+**Generate synthetic data with Blender and Python**
 ======
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+This blogpost will go through a very attractive alternative for gathering data for a given specific application. Regardless of the type of application, this blogpost seeks to show the reader the pontential of synthetic data generation with open-source resources such as Blender. 
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Indeed, the need to gather data and label it in a short amount of time is one that hasn't been exactly solved when it comes to real-life data. This is why, to tackle this problem, we must turn to synthetic data generation which, with the right amount of code, can provide both the labels and the features needed to train a deep learning model later on. 
+
+In this case, we focus on an object recognition problem, and we generate the data using Blender and its scripting functionality. 
+
+This blogpost is divided into the following main sections:
 
 - [1. Overview of the Project](#1-overview-of-the-project)
 - [2. Blender scene setup](#2-blender-scene-setup)
@@ -23,16 +27,30 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 - [4. Test with YOLO and Google Colab](#4-test-with-yolo-and-google-colab)
   * [Results obtained](#results-obtained)
     
-<!-- toc -->
-
+<!-- toc -->¡
 
 # **1. Overview of the Project**
-Neque sitisquam volecae repelis doluptassin pore reium facearchita que vel eos nimpore et, quiatiis molut aut et quident pelibus am ditis nonsectati inctotatem reruptatet volo tem. Lique essi tem. Neque necto eos dolorectem simus ut volores ciatiosti net faccatemquo ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+For this project we are going to generate the data to recognize  the wooden toys shown in the images below. In order to do this, we are going to create an algorithm that takes pictures of all of the objects in the same configuration as in the pictures, and also outputs the labels corresponding to the bounding boxes of the location of each object in each image. 
 
 ![](Images/Realexample1.jpeg)  ![](Images/Realexample2.jpeg)  ![](Images/Realexample3.jpg)
 ![](Images/Realexample4.jpg)  ![](Images/Realexample5.jpg)  ![](Images/Realexample6.jpg)
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+The classes we wish to recognize are the following:
+
+    ```
+    Fleur_rose (Pink flower)
+    Carre_bleu (Blue square)
+    Etoile_verte (Green star)
+    Hexagone_jaune (Yellow hexagon)
+    Losange_orange (Orange lozenge)
+    Oval_rose (Pink oval)
+    Rectangle_bleu (Blue rectangle)
+    Rond_vert (Green circle)
+    Triangle_eq_orange (Orange equilateral triangle)
+    ```
+The algorithm mentioned above is going to be implemented in Python in the rendering software Blender. [Blender](https://www.blender.org/) is an open source software used for multiple rendering applications ranging from animation to product design. This software is going to allows to create realistic renderings of the objects seen above, while allowing us to access the position of each object too, a key feature for the labelling to be done.
+
+The Blender file exlained in this blogpost, as well as the entire code and all necessary ressources can be found [here](https://github.com/BlenderDataGeneration/BlenderDataGeneration.github.io).
 
 # **2. Blender scene setup**
 Whichever it is the object you want to recognize, in order to generate synthetic data to train its recognizor, we have to represent this or these objects in Blender. Therefore, we have to create and setup a scene that tries to resemble the most to the actual, real-life scene in which we would normally find the objects we want to recognize. 
