@@ -27,7 +27,7 @@ This blogpost is divided into the following main sections:
 - [4. Test with YOLO and Google Colab](#4-test-with-yolo-and-google-colab)
   * [Results obtained](#results-obtained)
     
-<!-- toc -->¡
+<!-- toc -->
 
 # **1. Overview of the Project**
 For this project we are going to generate the data to recognize  the wooden toys shown in the images below. In order to do this, we are going to create an algorithm that takes pictures of all of the objects in the same configuration as in the pictures, and also outputs the labels corresponding to the bounding boxes of the location of each object in each image. 
@@ -50,7 +50,7 @@ The classes we wish to recognize are the following:
     ```
 The algorithm mentioned above is going to be implemented in Python in the rendering software Blender. [Blender](https://www.blender.org/) is an open source software used for multiple rendering applications ranging from animation to product design. This software is going to allows to create realistic renderings of the objects seen above, while allowing us to access the position of each object too, a key feature for the labelling to be done.
 
-The Blender file exlained in this blogpost, as well as the entire code and all necessary ressources can be found [here](https://github.com/BlenderDataGeneration/BlenderDataGeneration.github.io).
+The Blender file explained in this blogpost, as well as the entire code and all necessary ressources can be found [here](https://github.com/BlenderDataGeneration/BlenderDataGeneration.github.io).
 
 # **2. Blender scene setup**
 Whichever it is the object you want to recognize, in order to generate synthetic data to train its recognizor, we have to represent this or these objects in Blender. Therefore, we have to create and setup a scene that tries to resemble the most to the actual, real-life scene in which we would normally find the objects we want to recognize. 
