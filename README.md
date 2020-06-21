@@ -155,9 +155,11 @@ _Toggle System Console Output_
 
 
 ## **Introduction to the Blender Console**
-### >> **Accesing scene information**
+The Blender Console allows users to enter algorithms into Blender's environment, using Pyhton language. It is very useful when it comes to generate data automatically. Here we explain the different steps we used to generate our data. 
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+### >> **Accesing scene information**
+In the following code, you can see how to access to the scene information.
+_bpy.data.scenes_ is a collection of all the scenes opened in Blender. In our case, only one scene was created. You can access it with the command _bpy.data.scenes[0]_ or _bpy.data.scenes['Scene']_.
 
 ```python
 >>> bpy.data
@@ -180,7 +182,13 @@ bpy.data.scenes['Scene']
 
 ```
 ### >> **Accesing object information**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+We also need to access to the objects information. In fact, we will modifiy several object parameters such as the brightness of the light and the position of the camera.
+_bpy.data.objects_ is a collection of all the objects of the scene. In our case, we have 15 different objects.
+Hence, you can call an object from two different ways:
+- either you can use the syntax _bpy.data.objects[x]_ where x is a number between 0 and 15 (the amount of objects in the scene)
+- or you can use the syntax _bpy.data.objects['Name'] where Name is the name of the object you want to call.
+
+You can then store the object you just call in a variable for further use.
 
 ```python
 >>> bpy.data.objects
@@ -224,11 +232,13 @@ bpy.data.objects['Light2']
 ```
 
 ### >> **Modifying object information**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+For each object, you can modify their information (position, location, etc...) in the scene editor. In the following picture, you can see how to modify the rotation of an object. It is important to understand the utility of the objects' parameters to be able to create an appropriate algorithm.
+You can see that when you modify a parameter, it's value is updated in the console as well. 
 
 ![](Images/Modifying_objects_Blender.png)
+_Modifying an object's parameter_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+We can now modify the different parameters in the console using the following lines of code:
 
 ```python
 >>> axe.rotation_euler = (0,0,0)
@@ -236,9 +246,11 @@ ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene
 >>> light1.data.energy = 50
 >>> light2.data.energy = 0
 ```
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+
+When you run the previous code, 
 
 ![](Images/After_scripting_changes_Blender.PNG)
+
 
 ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, 
 
