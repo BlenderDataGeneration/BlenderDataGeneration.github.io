@@ -233,7 +233,7 @@ bpy.data.objects['Light2']
 
 ### >> **Modifying object information**
 For each object, you can modify their information (position, location, etc...) in the scene editor. In the following picture, you can see how to modify the rotation of an object. It is important to understand the utility of the objects' parameters to be able to create an appropriate algorithm.
-You can see that when you modify a parameter, it's value is updated in the console as well. 
+You can see that when you modify a parameter, its value is updated in the console as well. 
 
 ![](Images/Modifying_objects_Blender.png)
 _Modifying an object's parameter_
@@ -247,40 +247,47 @@ We can now modify the different parameters in the console using the following li
 >>> light2.data.energy = 0
 ```
 
-When you run the previous code, 
+_light1.data.energy_ allows you to modify the brightness of the light.
+_camera.location_ modifies the location of the camera.
+_axe.rotation_euler_ modifies the rotation of the object 'axe'.
+
 
 ![](Images/After_scripting_changes_Blender.PNG)
+_Scene obtained after running the previous lines of code_
 
-
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, 
+You can now modify one of the parameter to see how the scene changes.
 
 ```
 >>> axe.rotation_euler = (0,0,50)
 ```
 
-voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Here we modified the orientation of the object 'axe'.
 
 ![](Images/Scripting_rotated_Blender.png)
+_Scene obtained after the modification of the parameter_
 
 
 ## **Main procedure to generate the training data**
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+To train our algorithm, we need a large amount of data. Thus, we will create an algorithm that takes pictures of our objects from different angles by moving the camera around the scene. We will also modify the brightness of the lights in order to obtain a data set more representative of reality. 
 
 ![](Images/Figure_environment_Blender.png)
+_Figure of the environment used in Blender_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur, voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+The following algorithm consists in three loops, each of them modifies one of the angle of the camera (see the previous picture). Inside the loops, we also modify the lights' brightness. Then, for each position of the camera, we take a picture of the scene and create a text file containing the object information. 
 
 ![](Images/Algorithm.png)
+_Procedure to generate pictures of the objects_
 
-ommo vollam fugitem corrumq uatende liquiam, apit ra volorrum laborpo repedigene nullest quidelit eiur audicia doluptaectur sit deria dolutem fugiae con plita del ipsam ilici debiti rerovides magnim non pa nimoles quasper spelliquo ma velent plis et is estotatur
+Here you can see pictures taken by the previous algorithm:
 
 <p align="center">
 <img  src="https://media.giphy.com/media/RJmzbdJQdTRAwyeY0N/giphy.gif">
 </p>
 
-voluptamet dionsequunt, aut audis et qui rem. Itas voluptatusci odi tectet aut alit liquate nonem facerum doluptur?
+Thanks to this algorithm, we will obtain several images with a matching text file containing the location of the objects and their bounding box. This data set will then be used to train a deep learning algorithm. 
 
 ![](Images/Expected_results.png)
+_Expected results of the algorithm_
 
 ## **Rendering class initial definition**
 In order to implement a program that incorporates the algorithm explained above and is able to access the information of the _Scene_ and the _Objects_ in it, we have decided to create an entire class named _Render_.
