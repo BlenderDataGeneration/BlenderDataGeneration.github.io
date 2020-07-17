@@ -48,6 +48,7 @@ The classes we wish to recognize are the following:
     Rond_vert (Green circle)
     Triangle_eq_orange (Orange equilateral triangle)
     ```
+
 The algorithm mentioned above is going to be implemented in Python in the rendering software Blender. [Blender](https://www.blender.org/) is an open source software used for multiple rendering applications ranging from animation to product design. This software is going to allows to create realistic renderings of the objects seen above, while allowing us to access the position of each object too, a key feature for the labelling to be done.
 
 The Blender file explained in this blogpost, as well as the entire code and all necessary ressources can be found [here](https://github.com/BlenderDataGeneration/BlenderDataGeneration.github.io).
