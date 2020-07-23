@@ -301,11 +301,10 @@ Finally, but most immportantly, we define the variable _self.camera_z_limits_ to
 ## Import all relevant libraries
 import bpy
 import numpy as np
-import time
 import math as m
-import os
 import random
 
+## Main Class
 class Render:
     def __init__(self):
         ## Scene information
@@ -313,30 +312,28 @@ class Render:
         self.scene = bpy.data.scenes['Scene']
         # Define the information relevant to the <bpy.data.objects>
         self.camera = bpy.data.objects['Camera']
-        self.axis = bpy.data.objects['Empty']
-        self.light_1 = bpy.data.objects['Light']
+        self.axis = bpy.data.objects['Main Axis']
+        self.light_1 = bpy.data.objects['Light1']
         self.light_2 = bpy.data.objects['Light2']
-        self.obj_names = ['Fleur rose', 'Carre bleu', 'Etoile verte', 'Hexagone jaune', 'Losange orange',
-                          'Ovale rose', 'Rectangle bleu', 'Rond vert', 'Triangle eq orange']
+        self.obj_names = ['Rose Flower', 'Blue Square', 'Green star', 'Yellow hexagon', 'Orange losange',
+                          'Rose oval', 'Blue rectangle', 'Green circle', 'Orange triangle']
         self.objects = self.create_objects() # Create list of bpy.data.objects from bpy.data.objects[1] to bpy.data.objects[N]
 
-        ## Rendering limits information
-        self.camera_z_limits = [0.3, 1] # Define range of heights z that the camera is going to pan through
+        ## Render information
+        self.camera_d_limits = [0.2, 0.8] # Define range of heights z in m that the camera is going to pan through
         self.beta_limits = [80, -80] # Define range of beta angles that the camera is going to pan through
         self.gamma_limits = [0, 360] # Define range of gamma angles that the camera is going to pan through
         
         ## Output information
-        # Input your own preferred location for the images
-        self.images_filepath = 'C:/Users/Federico Arenas/Desktop/GitHubrepo/BlenderDataGeneration.github.io/Blender/Data'
-        # Input your own preferred location for the labels
-        self.labels_filepath = 'C:/Users/Federico Arenas/Desktop/GitHubrepo/BlenderDataGeneration.github.io/Blender/Data/Labels'
+        # Input your own preferred location for the images and labels
+        self.images_filepath = 'C:/Users/Federico Arenas/Desktop/Webinar/Tutorial Blender/Blender/Data'
+        self.labels_filepath = 'C:/Users/Federico Arenas/Desktop/Webinar/Tutorial Blender/Blender/Data/Labels'
 
-    def create_objects(self): # This function creates a list of all the <bpy.data.objects> 
-        objs = []
-        for obj in self.obj_names:
-            objs.append(bpy.data.objects[obj])
-        
-        return objs
+    def set_camera(self):
+        self.axis.rotation_euler = (0, 0, 0)
+        self.axis.location = (0, 0, 0)
+        self.camera.location = (0, 0, 3)
+
 ```
 
 ## **Main algorithm to pan around the objects and take pictures**
@@ -360,36 +357,40 @@ If the user hits 'Y' then the algorithm starts creating the data. It must be not
 
         if accept_render == 'Y': # If the user inputs 'Y' then procede with the data generation
             # Create .txt file that record the progress of the data generation
-            report_file_path = self.labels_filepath + '/progress_report.txt' 
+            report_file_path = self.labels_filepath + '/progress_report.txt'
             report = open(report_file_path, 'w')
             # Multiply the limits by 10 to adapt to the for loop
-            zmin = int(self.camera_z_limits[0] * 10) 
-            zmax = int(self.camera_z_limits[1] * 10)
+            dmin = int(self.camera_d_limits[0] * 10)
+            dmax = int(self.camera_d_limits[1] * 10)
             # Define a counter to name each .png and .txt files that are outputted
-            render_counter = -3
+            render_counter = 0
             # Define the step with which the pictures are going to be taken
             rotation_step = rot_step
 
             # Begin nested loops
-            for d in range(zmin, zmax + 1, 2): # Loop to vary the height of the camera
-                render_counter += 1 # Update the counter 
-                ## Update the height of the camera 
+            for d in range(dmin, dmax + 1, 2): # Loop to vary the height of the camera
+                ## Update the height of the camera
                 self.camera.location = (0, 0, d/10) # Divide the distance z by 10 to re-factor current height
 
                 # Refactor the beta limits for them to be in a range from 0 to 360 to adapt the limits to the for loop
-                min_beta = (-1) * self.beta_limits[0] + 90 
-                max_beta = (-1) * self.beta_limits[1] + 90
+                min_beta = (-1)*self.beta_limits[0] + 90
+                max_beta = (-1)*self.beta_limits[1] + 90
 
                 for beta in range(min_beta, max_beta + 1, rotation_step): # Loop to vary the angle beta
-                    beta_r = 90 - beta # Re-factor the current beta
-                    render_counter += 1 # Update the counter
+                    beta_r = (-1)*beta + 90 # Re-factor the current beta
 
                     for gamma in range(self.gamma_limits[0], self.gamma_limits[1] + 1, rotation_step): # Loop to vary the angle gamma
-                        render_counter += 1 # Update the counter
+                        render_counter += 1 # Update counter
                         
                         ## Update the rotation of the axis
                         axis_rotation = (m.radians(beta_r), 0, m.radians(gamma)) 
                         self.axis.rotation_euler = axis_rotation # Assign rotation to <bpy.data.objects['Empty']> object
+                        # Display demo information - Location of the camera
+                        print("On render:", render_counter)
+                        print("--> Location of the camera:")
+                        print("     d:", d/10, "m")
+                        print("     Beta:", str(beta_r)+" Deg")
+                        print("     Gamma:", str(gamma)+" Deg")
 
                         ## Configure lighting
                         energy1 = random.randint(0, 30) # Grab random light intensity
@@ -399,12 +400,18 @@ If the user hits 'Y' then the algorithm starts creating the data. It must be not
 
                         ## Generate render
                         self.render_blender(render_counter) # Take photo of current scene and ouput the render_counter.png file
+                        # Display demo information - Photo information
+                        print("--> Picture information:")
+                        print("     Resolution:", (self.xpix*self.percentage, self.ypix*self.percentage))
+                        print("     Rendering samples:", self.samples)
 
                         ## Output Labels
                         text_file_name = self.labels_filepath + '/' + str(render_counter) + '.txt' # Create label file name
-                        text_file = open(text_file_name, 'w+') # Open .txt file
-                        text_coordinates = self.get_all_coordinates(self.xpix * self.percentage * 0.01,
-                                                                    self.ypix * self.percentage * 0.01) # Get formatted coordinates of the bounding boxes of all the objects in the scene
+                        text_file = open(text_file_name, 'w+') # Open .txt file of the label
+                        # Get formatted coordinates of the bounding boxes of all the objects in the scene
+                        # Display demo information - Label construction
+                        print("---> Label Construction")
+                        text_coordinates = self.get_all_coordinates()
                         splitted_coordinates = text_coordinates.split('\n')[:-1] # Delete last '\n' in coordinates
                         text_file.write('\n'.join(splitted_coordinates)) # Write the coordinates to the text file and output the render_counter.txt file
                         text_file.close() # Close the .txt file corresponding to the label
@@ -418,6 +425,8 @@ If the user hits 'Y' then the algorithm starts creating the data. It must be not
         else: # If the user inputs anything else, then abort the data generation
             print('Aborted rendering operation')
             pass
+
+
 ```
 
 You might have noticed that we call two functions that are created by us: _self.render_blender(render_counter)_ and _self.get_all_coordinates(resx, resy). The first function, which is included in the source code, varies the image size and definition, takes a picture and defines the _self.xpix_, _self.ypix_ and _self.percentage_  variables, which are the size of the picture taken and its scale provided in %.  This function ultimately exports the _render_counter.png_ file to the _self.images_filepath_ location.
@@ -472,21 +481,27 @@ _Format of the label after formatting ([source](https://datascience-enthusiast.c
 The function can be seen here:
 
 ```python
-    def get_all_coordinates(self, resx, resy):
+    def get_all_coordinates(self):
         '''
-        This function takes the width and height of the image and outputs
-        the complete string with the coordinates of all the objects in view in 
-        the current image
+        This function takes no input and outputs the complete string with the coordinates
+        of all the objects in view in the current image
         '''
         main_text_coordinates = '' # Initialize the variable where we'll store the coordinates
-        for i, obj in enumerate(self.objects): # Loop through all of the objects
-            b_box = self.find_bounding_box(obj) # Get current object's coordinates
+        for i, objct in enumerate(self.objects): # Loop through all of the objects
+            print("     On object:", objct)
+            b_box = self.find_bounding_box(objct) # Get current object's coordinates
             if b_box: # If find_bounding_box() doesn't return None
-                text_coordinates = self.format_coordinates(b_box, i, resx, resy) # Reformat coordinates to YOLOv3 format
-                main_text_coordinates = main_text_coordinates + text_coordinates # Update main_text_coordinates variables which each
+                print("         Initial coordinates:", b_box)
+                text_coordinates = self.format_coordinates(b_box, i) # Reformat coordinates to YOLOv3 format
+                print("         YOLO-friendly coordinates:", text_coordinates)
+                main_text_coordinates = main_text_coordinates + text_coordinates # Update main_text_coordinates variables whith each
                                                                                  # line corresponding to each class in the frame of the current image
+            else:
+                print("         Object not visible")
+                pass
 
         return main_text_coordinates # Return all coordinates
+
 ```
 
 Finally, the _main_text_coordinates_ are returned as a string.
@@ -495,12 +510,15 @@ Finally, the _main_text_coordinates_ are returned as a string.
 We run the following code, which calls the _Render()_ class, initializes de camera end then starts the data generation loop. 
 
 ```python
-
+## Run data generation
 if __name__ == '__main__':
-    r = Render() # Initialize Render() class and define it as r
-    r.set_camera() # Initialize all positions of the camera and the axis
-    r.main_rendering_loop(5) # Start rendering with specified rotation step (rot_step)
-
+    # Initialize rendering class as r
+    r = Render()
+    # Initialize camera
+    r.set_camera()
+    # Begin data generation
+    rotation_step = 5
+    r.main_rendering_loop(rotation_step)
 ```
 The program will output the progress to the Blender _Toggle Console Window_. It will output the images and labels to the specified locations.
 
@@ -550,4 +568,14 @@ The recognition results are satisfactory taking into account that it took us aro
 <img  src="https://media.giphy.com/media/QvjLvKObcUGxbIYxRe/giphy.gif">
 </p>
 
-A demonstration of the algorithm working on video can be found [here](https://www.youtube.com/watch?v=z1bx544dLs8).
+A demonstration of the algorithm working on synthetic test data can be found seen below and the full video can be found [here](https://youtu.be/qUzavEt567E).
+
+<p align="center">
+<img  src="https://media.giphy.com/media/ZXwnATpM4K1dYbibZM/giphy.gif">
+</p>
+
+A demonstration of the algorithm working on real test data can be found seen below and the full video can be found [here](https://youtu.be/nBRsICWZIZc).
+
+<p align="center">
+<img  src="https://media.giphy.com/media/VdiHTovXYeYUxAx3TA/giphy.gif">
+</p>
