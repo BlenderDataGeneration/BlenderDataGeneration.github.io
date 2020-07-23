@@ -276,7 +276,10 @@ _Figure of the environment used in Blender_
 
 The following algorithm consists in three loops, each of them modifies one of the angle of the camera (see the previous picture). Inside the loops, we also modify the lights' brightness. Then, for each position of the camera, we take a picture of the scene and create a text file containing the object information. 
 
-![](Images/finalalgorithm.png)
+<p align="center">
+<img  src="Images/finalalgorithm.png">
+</p>
+
 _Procedure to generate pictures of the objects_
 
 Here you can see pictures taken by the previous algorithm:
