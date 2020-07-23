@@ -37,21 +37,21 @@ For this project we are going to generate the data to recognize  the wooden toys
 
 The classes we wish to recognize are the following:
 
-    ```
-    Fleur_rose (Pink flower)
-    Carre_bleu (Blue square)
-    Etoile_verte (Green star)
-    Hexagone_jaune (Yellow hexagon)
-    Losange_orange (Orange lozenge)
-    Oval_rose (Pink oval)
-    Rectangle_bleu (Blue rectangle)
-    Rond_vert (Green circle)
-    Triangle_eq_orange (Orange equilateral triangle)
-    ```
+```
+    Pink flower
+    Blue square
+    Green star
+    Yellow hexagon
+    Orange lozenge
+    Pink oval
+    Blue rectangle
+    Green circle
+    Orange triangle
+```
 
 The algorithm mentioned above is going to be implemented in Python in the rendering software Blender. [Blender](https://www.blender.org/) is an open source software used for multiple rendering applications ranging from animation to product design. This software is going to allows to create realistic renderings of the objects seen above, while allowing us to access the position of each object too, a key feature for the labelling to be done.
 
-The Blender file explained in this blogpost, as well as the entire code and all necessary ressources can be found [here](https://github.com/BlenderDataGeneration/BlenderDataGeneration.github.io).
+The Blender file explained in this blogpost, as well as the entire code and all necessary ressources can be found [here](https://github.com/federicoarenasl/BlenderDataGeneration.github.io).
 
 # **2. Blender scene setup**
 Whichever it is the object you want to recognize, in order to generate synthetic data to train its recognizor, we have to represent this or these objects in Blender. Therefore, we have to create and setup a scene that tries to resemble the most to the actual, real-life scene in which we would normally find the objects we want to recognize. 
