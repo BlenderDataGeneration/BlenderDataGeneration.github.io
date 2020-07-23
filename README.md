@@ -568,13 +568,13 @@ The recognition results are satisfactory taking into account that it took us aro
 <img  src="https://media.giphy.com/media/QvjLvKObcUGxbIYxRe/giphy.gif">
 </p>
 
-A demonstration of the algorithm working on synthetic test data can be found seen below and the full video can be found [here](https://youtu.be/qUzavEt567E).
+A demonstration of the algorithm working on synthetic test data can be seen below and the full video can be found [here](https://youtu.be/qUzavEt567E).
 
 <p align="center">
 <img  src="https://media.giphy.com/media/ZXwnATpM4K1dYbibZM/giphy.gif">
 </p>
 
-A demonstration of the algorithm working on real test data can be found seen below and the full video can be found [here](https://youtu.be/nBRsICWZIZc).
+A demonstration of the algorithm working on real test data can be seen below and the full video can be found [here](https://youtu.be/nBRsICWZIZc).
 
 <p align="center">
 <img  src="https://media.giphy.com/media/VdiHTovXYeYUxAx3TA/giphy.gif">
